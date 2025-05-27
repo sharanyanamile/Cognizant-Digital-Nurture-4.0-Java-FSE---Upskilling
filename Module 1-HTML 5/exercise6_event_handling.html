@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Demo</title>
+    <script>
+        function validatePhone() {
+            let phone = document.getElementById("phone").value;
+            let regex = /^[0-9]{10}$/;
+            if (!regex.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+            }
+        }
+
+        function displayFee() {
+            let fee = document.getElementById("eventFee").value;
+            document.getElementById("feeDisplay").innerText = "Selected Fee: " + fee;
+        }
+
+        function showConfirmation() {
+            alert("Your feedback has been submitted successfully!");
+        }
+
+        function enlargeImage() {
+            let img = document.getElementById("eventImage");
+            img.style.width = "400px";
+            img.style.height = "auto";
+        }
+
+        function countCharacters() {
+            let feedback = document.getElementById("feedback");
+            document.getElementById("charCount").innerText = "Characters: " + feedback.value.length;
+        }
+    </script>
+</head>
+<body>
+    <h2>Event Feedback Form</h2>
+
+    <label>Phone Number:</label>
+    <input type="text" id="phone" onblur="validatePhone()">
+    <br><br>
+
+    <label>Select Event Fee:</label>
+    <select id="eventFee" onchange="displayFee()">
+        <option value="$10">$10</option>
+        <option value="$20">$20</option>
+        <option value="$30">$30</option>
+    </select>
+    <p id="feeDisplay"></p>
+    <br><br>
+
+    <button onclick="showConfirmation()">Submit</button>
+    <br><br>
+
+    <img src="event.jpg" id="eventImage" width="200px" ondblclick="enlargeImage()">
+    <br><br>
+
+    <label>Feedback:</label>
+    <textarea id="feedback" onkeyup="countCharacters()"></textarea>
+    <p id="charCount">Characters: 0</p>
+</body>
+</html>

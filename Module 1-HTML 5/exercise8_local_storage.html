@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Preferences</title>
+  <script>
+    function savePref() {
+      let val = document.getElementById("event").value;
+      localStorage.setItem("prefEvent", val);
+    }
+    function loadPref() {
+      let val = localStorage.getItem("prefEvent");
+      if (val) document.getElementById("event").value = val;
+    }
+    function clearPrefs() {
+      localStorage.clear(); sessionStorage.clear();
+    }
+    window.onload = loadPref;
+  </script>
+</head>
+<body>
+  <select id="event" onchange="savePref()">
+    <option value="">Choose Event</option>
+    <option value="workshop">Workshop</option>
+    <option value="seminar">Seminar</option>
+  </select>
+  <button onclick="clearPrefs()">Clear Preferences</button>
+</body>
+</html>

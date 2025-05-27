@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debugging</title>
+  <script>
+    let count = 0;
+    function logClick() {
+      count++;
+      console.log("Button clicked " + count + " times");
+      debugger;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="logClick()">Click me</button>
+</body>
+</html>
