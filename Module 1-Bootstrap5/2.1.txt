@@ -1,0 +1,5 @@
+
+Bootstrap Directory:
+- css: Contains bootstrap.min.css and related stylesheets
+- js: Contains bootstrap.bundle.min.js (includes Popper.js) for components
+- icons: Optional set of Bootstrap SVG icons

@@ -1,0 +1,10 @@
+
+19.1: Use npm to install Bootstrap with Sass:
+npm install bootstrap
+
+19.2: Customize _variables.scss (e.g., override primary color and border radius):
+$primary: #6610f2;
+$border-radius: 1rem;
+
+Then recompile using:
+npx sass bootstrap/scss/bootstrap.scss custom-bootstrap.css
